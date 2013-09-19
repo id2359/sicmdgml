@@ -11,7 +11,7 @@ let down xs = Down xs
 let up1 x = up [x]
 let down1 x = down [x]
 
-let rec cc a b = function
+let rec cc a b = match (a,b) with
 	|  (Up xs ,  Down ys) 
 	|  (Down xs, Up ys) -> ( List.length xs ) == ( List.length ys )
 	| _  -> false
