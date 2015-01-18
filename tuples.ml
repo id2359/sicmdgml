@@ -14,6 +14,6 @@ let down1 x = down [x]
 let rec cc a b = match (a,b) with
 	|  (Up xs ,  Down ys) 
 	|  (Down xs, Up ys) -> ( List.length xs ) == ( List.length ys )
-	| _  -> false
-
-
+	|  (UpStructure x::xs, DownStructure y::ys) ->
+		( cc x y ) and ( cc xs ys )
+	| _ -> false
